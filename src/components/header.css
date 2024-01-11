@@ -1,0 +1,9 @@
+.full-width-navbar {
+    width: 100%;
+  }
+  
+  .navbar-logo {
+    max-height: 40px; /* Adjust the size as needed */
+    margin-right: 10px; /* Optional: Add some margin to the right if desired */
+  }
+  
