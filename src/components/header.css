@@ -1,5 +1,6 @@
 .full-width-navbar {
     width: 100%;
+    
   }
   
   .navbar-logo {
@@ -7,3 +8,6 @@
     margin-right: 10px; /* Optional: Add some margin to the right if desired */
   }
   
+  .customchange{
+   background-color: #2E363F;
+  }

@@ -1,7 +1,8 @@
 // AppNavbar.js
 import React, { useState } from 'react';
-import { Navbar, Nav, Button } from 'react-bootstrap';
-import logo from '../images/ae-logo-vector.png';
+import { Navbar, Nav } from 'react-bootstrap';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+import logo from '../images/ae-logo-white-vector.webp';
 import './header.css';
 import LoginForm from './Authentication/Login';
 import SignupForm from './Authentication/Signup';
@@ -32,7 +33,7 @@ const AppNavbar = () => {
   };
 
   return (
-    <Navbar bg="body-tertiary" expand="lg" className="full-width-navbar">
+    <Navbar bg="#2E363F" expand="lg" className="full-width-navbar customchange">
       <Navbar.Brand href="#" className="mr-auto ml-3">
         <img src={logo} alt="Logo" className="navbar-logo" />
       </Navbar.Brand>
@@ -41,14 +42,21 @@ const AppNavbar = () => {
         <Nav className="ml-auto mr-3">
           {!isLoggedIn ? (
             <>
-              <Nav.Link onClick={handleLogin} className="nav-link">Login</Nav.Link>
-              <Nav.Link onClick={handleSignup} className="nav-link">Sign Up</Nav.Link>
+              <Nav.Link style={{ color: "#fff" }} onClick={handleLogin} className="nav-link">
+                Login
+              </Nav.Link>
+              <Nav.Link style={{ color: "#fff" }} onClick={handleSignup} className="nav-link">
+                Sign Up
+              </Nav.Link>
             </>
           ) : (
             <>
-              <Nav.Link href="#" className="nav-link">+Create Event</Nav.Link>
-              <Nav.Link href="#" className="nav-link">Profile</Nav.Link>
-              <Nav.Link onClick={handleLogout} className="nav-link">Logout</Nav.Link>
+              <Link to="/addevent" style={{ color: "#fff" }} className="nav-link">
+                +Create Event
+              </Link>
+              <Nav.Link href="#" style={{ color: "#fff" }} className="nav-link">
+                Profile
+              </Nav.Link>
             </>
           )}
         </Nav>
